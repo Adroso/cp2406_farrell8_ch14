@@ -22,7 +22,7 @@ public class FixDebugFourteen2 extends JFrame implements ItemListener
       super("Pay List");
       setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
       setLayout(flow);
-      payMethod.addActionListener(payMethod);
+      payMethod.addItemListener(this);
       add(payList);
       add(payMethod);
       payMethod.addItem("Credit card");
@@ -37,20 +37,15 @@ public class FixDebugFourteen2 extends JFrame implements ItemListener
       cframe.setVisible(true);
    }
    @Override
-   public void itemStateChanged()
+   public void itemStateChanged(ItemEvent list)
    {
       Object source = list.getSource();
-      if(source = payMethod)
+      if(source == payMethod)
       {
          int fee = payMethod.getSelectedIndex();
-         feePct = fees[x];
+         feePct = fees[fee];
          output = feePct + " " + pctMsg;
          totFees.setText(output);
       }
-   }
-
-   @Override
-   public void itemStateChanged(ItemEvent e) {
-
    }
 }
