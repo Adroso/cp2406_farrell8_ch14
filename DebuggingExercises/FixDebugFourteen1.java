@@ -8,6 +8,7 @@ public class FixDebugFourteen1 extends JFrame
    {
       super("This is my frame");
       setSize(size, size * 2);
+      this.setVisible(true);
       super.setDefaultCloseOperation(size);
    }
 

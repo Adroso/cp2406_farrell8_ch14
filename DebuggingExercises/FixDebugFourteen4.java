@@ -29,29 +29,33 @@ public class FixDebugFourteen4 extends JFrame implements ItemListener
       add(cola);
       cola.addItemListener(this);
       add(lemon);
+      lemon.addItemListener(this);
       add(tea);
       tea.addItemListener(this);
       add(milk);
       milk.addItemListener(this);
+      add(coffee);
+      coffee.addItemListener(this);
       add(totPrice);
 
       drinkGrp.add(cola);
       drinkGrp.add(lemon);
       drinkGrp.add(milk);
+      drinkGrp.add(tea);
       drinkGrp.add(coffee);
       totPrice.setText("0");
    }
    public static void main(String[] arguments)
    {
       JFrame bFrame = new FixDebugFourteen4();
-      bFrame.setSize(350, 100);
+      bFrame.setSize(1800, 100);
       bFrame.setVisible(true);
-   } 
+   }
    @Override
    public void itemStateChanged(ItemEvent check)
    {
       Object source = check.getItem();
-      if(source == cola && source == milk)
+      if(source == cola || source == milk)
       {
          totPrice.setText("$" + HIGH_PRICE);
       }
